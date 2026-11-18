@@ -1,0 +1,466 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Vrushali Kadam</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Vrushali Kadam is an MS Computer Science & Engineering student at UC Santa Cruz working on machine learning, ML infrastructure and backend systems. Open to Software Engineering internships for Summer 2027.">
+<meta name="author" content="Vrushali Kadam">
+<link rel="canonical" href="https://kadamvrushali.github.io/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Vrushali Kadam">
+<meta property="og:description" content="MS CSE @ UC Santa Cruz. I apply ML to problems in multiple domains.">
+<meta property="og:url" content="https://kadamvrushali.github.io/">
+<meta property="og:image" content="https://kadamvrushali.github.io/photo-pro.jpg">
+<meta name="twitter:card" content="summary">
+<meta name="theme-color" content="#ff5fa2">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 7 6' shape-rendering='crispEdges'%3E%3Cpath fill='%23ff5fa2' d='M1 0h2v1h1V0h2v1h1v2H6v1H5v1H4v1H3V5H2V4H1V3H0V1h1z'/%3E%3C/svg%3E">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Person","name":"Vrushali Kadam","alternateName":"Vrushali Vinod Kadam","url":"https://kadamvrushali.github.io/","image":"https://kadamvrushali.github.io/photo-pro.jpg","email":"mailto:vkadam@ucsc.edu","jobTitle":"MS Computer Science & Engineering student","alumniOf":[{"@type":"CollegeOrUniversity","name":"University of California, Santa Cruz"},{"@type":"CollegeOrUniversity","name":"Vellore Institute of Technology"}],"knowsAbout":["Machine Learning","ML Infrastructure","Backend Engineering","FastAPI","PyTorch","Microservices"],"sameAs":["https://www.linkedin.com/in/vrushalikadam14/","https://github.com/KadamVrushali","https://scholar.google.com/citations?user=QISNOOMAAAAJ"]}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;600;700&family=Nunito:wght@400;600;700;800&family=VT323&display=swap">
+<style>
+/* Layout: sticky pink pixel nav over a blush page with soft pink glows; one ~880px column; notched pixel-border cards */
+:root{
+  --bg:#fff6f9; --surface:#ffffff; --pink:#ff5fa2; --soft:#ffd3e6; --rose:#c23574; --ink:#4b1f37; --muted:#875770;
+  --display:"Pixelify Sans","Courier New",monospace;
+  --body:"Nunito",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"VT323","Courier New",monospace;
+  --px:4px;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:88px}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.7 var(--body)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:30;background:var(--pink)}
+a{color:var(--rose);text-decoration-thickness:2px;text-underline-offset:3px}
+a:hover{color:var(--pink)}
+:focus-visible{outline:3px dashed var(--pink);outline-offset:4px}
+canvas.sprite{image-rendering:pixelated;display:inline-block;vertical-align:middle}
+
+.glow{position:fixed;inset:0;z-index:-1;pointer-events:none;background:
+  radial-gradient(circle at 3% 14%,rgba(255,95,162,.42),transparent 20%),
+  radial-gradient(circle at 97% 84%,rgba(255,95,162,.38),transparent 22%),
+  radial-gradient(circle at 85% 18%,rgba(255,211,230,.8),transparent 26%)}
+
+.wrap{max-width:920px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+
+/* nav */
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--pink);box-shadow:0 var(--px) 0 var(--soft)}
+.nav .wrap{display:flex;align-items:center;gap:16px;padding-block:12px}
+.brand canvas{flex:none}
+.brand{font:600 22px/1 var(--display);color:#fff;text-decoration:none;white-space:nowrap;display:flex;align-items:center;gap:8px}
+.brand:hover{color:#fff}
+.nav ul{list-style:none;margin:0 0 0 auto;padding:0;display:flex;gap:4px;overflow-x:auto;scrollbar-width:none}
+.nav ul a{display:block;padding:4px 10px;font:500 18px/1.4 var(--display);color:#fff;text-decoration:none;white-space:nowrap}
+.nav ul a:hover,.nav ul a[aria-current]{background:#fff;color:var(--rose)}
+
+/* pixel border */
+.px{background:var(--surface);box-shadow:
+  0 calc(-1*var(--px)) 0 0 var(--pink),0 var(--px) 0 0 var(--pink),
+  calc(-1*var(--px)) 0 0 0 var(--pink),var(--px) 0 0 0 var(--pink),
+  calc(3*var(--px)) calc(3*var(--px)) 0 0 var(--soft)}
+
+.btn{display:inline-flex;align-items:center;gap:8px;padding:8px 18px;font:500 19px/1.3 var(--display);text-decoration:none;color:var(--rose);background:var(--surface);border:0;cursor:pointer;transition:transform .12s}
+.btn.px{box-shadow:0 -4px 0 0 var(--pink),0 4px 0 0 var(--pink),-4px 0 0 0 var(--pink),4px 0 0 0 var(--pink),6px 6px 0 0 var(--soft)}
+.btn.solid{background:var(--pink);color:#fff}
+.btn:hover{transform:translate(-2px,-2px)}
+.btn:active{transform:translate(2px,2px)}
+
+/* hero */
+.hero{position:relative;padding-block:72px 0}
+.hero-grid{display:grid;grid-template-columns:260px 1fr;gap:56px;align-items:center}
+.photo{padding:10px;width:100%;max-width:260px}
+.photo img{display:block;width:100%;aspect-ratio:252/290;object-fit:cover}
+.chip{display:inline-flex;align-items:center;gap:8px;font:400 21px/1 var(--mono);color:var(--rose);background:var(--soft);padding:6px 12px}
+.chip i{width:10px;height:10px;background:#3ccf8e;display:inline-block;animation:blink 1.4s steps(2) infinite}
+h1{font:600 clamp(42px,7.4vw,72px)/1.05 var(--display);color:var(--pink);margin:18px 0 12px;text-wrap:balance;letter-spacing:-.01em}
+.tag{font-size:clamp(18px,2.4vw,21px);color:var(--muted);max-width:30ch;margin:0 0 28px}
+.cta{display:flex;flex-wrap:wrap;gap:20px}
+.float{position:absolute;animation:bob 3.2s ease-in-out infinite}
+.track{position:relative;height:72px;margin-top:48px;overflow:hidden;
+  background:repeating-linear-gradient(90deg,var(--pink) 0 8px,transparent 8px 16px) bottom/100% 4px no-repeat}
+.track .sprite{position:absolute;bottom:6px;left:0;animation:run 14s linear infinite}
+.track small{position:absolute;right:0;bottom:12px;font:400 19px/1 var(--mono);color:var(--muted)}
+
+/* sections */
+section{padding-block:64px 8px}
+h2{font:500 clamp(30px,4.6vw,40px)/1.2 var(--display);color:var(--pink);margin:0 0 28px;display:flex;align-items:center;gap:14px}
+h2 .slash{color:var(--rose)}
+h2::after{content:"";flex:1;height:4px;min-width:40px;background:repeating-linear-gradient(90deg,var(--soft) 0 8px,transparent 8px 14px)}
+h3{font:600 23px/1.3 var(--display);margin:0;color:var(--ink)}
+.date{font:400 21px/1.2 var(--mono);color:var(--muted);letter-spacing:.04em;text-transform:uppercase}
+ul.bul{list-style:none;padding:0;margin:14px 0 0;display:grid;gap:10px}
+ul.bul li{position:relative;padding-left:24px}
+ul.bul li::before{content:"";position:absolute;left:2px;top:.5em;width:12px;height:12px;--g:linear-gradient(var(--pink),var(--pink));
+  background:var(--g) 0 0/4px 12px no-repeat,var(--g) 4px 2px/4px 8px no-repeat,var(--g) 8px 4px/4px 4px no-repeat}
+
+/* about */
+.about{display:grid;grid-template-columns:1.4fr 1fr;gap:40px;align-items:start}
+.about p{margin:0 0 14px;max-width:62ch}
+.side{display:grid;gap:36px;justify-items:start}
+.edu{width:100%;padding:22px 24px;display:grid;gap:18px}
+.edu b{font:600 18px/1.3 var(--display);display:block;color:var(--ink)}
+.edu span{font-size:15px;color:var(--muted)}
+.label{font:400 20px/1 var(--mono);color:var(--rose);letter-spacing:.06em;text-transform:uppercase}
+.skills{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.skills li{list-style:none;font:500 15px/1 var(--display);padding:7px 10px;background:var(--soft);color:var(--rose)}
+.skills{padding:0}
+
+/* experience tabs */
+.tabs{display:grid;grid-template-columns:190px 1fr;gap:36px}
+.tablist{display:flex;flex-direction:column;border-left:4px solid var(--soft)}
+.tablist button{all:unset;cursor:pointer;padding:10px 16px;margin-left:-4px;border-left:4px solid transparent;font:500 17px/1.3 var(--display);color:var(--muted);white-space:nowrap}
+.tablist button:hover{background:var(--soft);color:var(--rose)}
+.tablist button[aria-selected=true]{border-left-color:var(--pink);color:var(--pink);background:var(--surface)}
+.tablist button:focus-visible{outline:3px dashed var(--pink);outline-offset:-3px}
+.panel h3 em{font-style:normal;color:var(--pink)}
+.panel .date{margin:4px 0 0}
+.panel .where{font-size:15px;color:var(--muted)}
+
+/* projects */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:32px}
+.card{padding:24px;display:flex;flex-direction:column;gap:12px;min-width:0}
+.card .top{display:flex;justify-content:space-between;align-items:center}
+.card p{margin:0;font-size:16px}
+.stack{display:flex;flex-wrap:wrap;gap:6px 14px;font:400 19px/1 var(--mono);color:var(--rose);margin-top:auto;padding-top:8px}
+.more{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px;margin:56px 0 24px}
+.more h3{color:var(--rose)}
+.filters{display:flex;flex-wrap:wrap;gap:8px}
+.filters button{all:unset;cursor:pointer;padding:6px 12px;font:500 16px/1 var(--display);color:var(--rose);background:var(--soft)}
+.filters button[aria-pressed=true]{background:var(--pink);color:#fff}
+.filters button:focus-visible{outline:3px dashed var(--pink);outline-offset:2px}
+.minis{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:28px}
+.mini{padding:18px 20px;display:flex;flex-direction:column;gap:8px;text-decoration:none;color:var(--ink);transition:transform .12s;min-width:0}
+.mini:hover{transform:translate(-3px,-3px);color:var(--ink)}
+.mini b{font:600 18px/1.3 var(--display)}
+.mini span{font-size:15px;line-height:1.55;color:var(--muted)}
+.mini small{margin-top:auto;padding-top:6px;display:flex;justify-content:space-between;gap:10px;font:400 18px/1.15 var(--mono);color:var(--rose)}
+.mini small em{font-style:normal;color:var(--pink);white-space:nowrap}
+
+/* publications */
+.pub{padding:24px;display:grid;grid-template-columns:auto 1fr;gap:20px;align-items:start}
+.pub+.pub{margin-top:28px}
+.pub p{margin:6px 0 0;font-size:16px}
+
+/* links */
+.links{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:24px}
+.link{padding:16px 18px;display:flex;align-items:center;gap:14px;text-decoration:none;color:var(--ink);transition:transform .12s;min-width:0}
+.link:hover{transform:translate(-3px,-3px);color:var(--ink)}
+.link b{font:500 19px/1.2 var(--display);display:block}
+.link span{font-size:14px;color:var(--muted);overflow-wrap:anywhere}
+.mail{margin-top:28px;display:flex;flex-wrap:wrap;align-items:center;gap:14px}
+.mail code{font:400 24px/1 var(--mono);color:var(--rose);user-select:all}
+
+footer{padding-block:72px 40px;text-align:center;font:400 20px/1.4 var(--mono);color:var(--muted)}
+
+@keyframes run{from{transform:translateX(-120px)}to{transform:translateX(calc(100vw + 40px))}}
+@keyframes bob{50%{transform:translateY(-8px)}}
+@keyframes blink{50%{opacity:0}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.track .sprite{left:40%}html{scroll-behavior:auto}}
+
+@media (max-width:760px){
+  .hero{padding-block:40px 0}
+  .hero-grid,.about,.tabs{grid-template-columns:1fr;gap:28px}
+  .photo{max-width:210px}
+  .tablist{flex-direction:row;overflow-x:auto;border-left:0;border-bottom:4px solid var(--soft)}
+  .tablist button{margin:0 0 -4px;border-left:0;border-bottom:4px solid transparent}
+  .tablist button[aria-selected=true]{border-bottom-color:var(--pink)}
+  .brand span{display:none}
+  canvas.float{display:none}
+  .pub{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<div class="glow" aria-hidden="true"></div>
+
+<header class="nav">
+  <nav class="wrap" aria-label="Main">
+    <a class="brand" href="#top"><canvas class="sprite" data-sprite="heart" data-scale="3" data-tint="#ffffff" aria-hidden="true"></canvas><span>vrushali.k</span></a>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#publications">Publications</a></li>
+      <li><a href="#links">Links</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="top">
+  <div class="hero wrap">
+    <canvas class="sprite float" data-sprite="sparkle" data-scale="4" style="top:36px;left:max(4px,calc(50% - 470px))" aria-hidden="true"></canvas>
+    <canvas class="sprite float" data-sprite="heart" data-scale="4" style="top:430px;left:max(4px,calc(50% - 482px));animation-delay:-1.2s" aria-hidden="true"></canvas>
+    <canvas class="sprite float" data-sprite="sparkle" data-scale="3" style="top:60px;right:2%;animation-delay:-2s" aria-hidden="true"></canvas>
+    <div class="hero-grid">
+      <div class="photo px"><img src="photo-pro.jpg" alt="Portrait of Vrushali Kadam" width="252" height="290"></div>
+      <div>
+        <span class="chip"><i aria-hidden="true"></i>open to SWE internships · summer 2027</span>
+        <h1>Hi, Vrushali here</h1>
+        <p class="tag">I apply ML to problems in multiple domains, and sometimes earn from it.</p>
+        <div class="cta">
+          <a class="btn px solid" href="#experience">See my work</a>
+          <a class="btn px" href="resume.pdf" target="_blank" rel="noopener">Résumé</a>
+        </div>
+      </div>
+    </div>
+    <div class="track" aria-hidden="true">
+      <canvas class="sprite" data-sprite="husky" data-scale="4" data-run></canvas>
+      <small>~ my husky - Lucy, on patrol</small>
+    </div>
+  </div>
+
+  <section id="about" class="wrap">
+    <h2><span><span class="slash">/</span>about me</span><canvas class="sprite" data-sprite="husky" data-scale="3" aria-hidden="true"></canvas></h2>
+    <div class="about">
+      <div>
+        <p>I'm a grad student at <a href="https://www.ucsc.edu/" target="_blank" rel="noopener">UC Santa Cruz</a>, doing my Masters in Computer Science &amp; Engineering. I like building the part of ML that actually ships: model serving, data pipelines and the backend around them.</p>
+        <p>Before this I was a software engineering intern at MEDxAI Innovations, a data science intern at JP Research, and an AI &amp; optimization intern at Baud Resources. I also co-authored an IEEE paper and filed a patent on drone-based crop inspection.</p>
+        <p>Off the keyboard: I have a lovely husky ;p and lately I've been building things in Minecraft.</p>
+        <ul class="skills" aria-label="Skills">
+          <li>Python</li><li>PyTorch</li><li>TensorFlow</li><li>FastAPI</li><li>Microservices</li><li>Docker</li><li>AWS</li><li>PostgreSQL</li><li>Redis</li><li>LLMs &amp; agents</li><li>C/C++</li><li>Java</li>
+        </ul>
+      </div>
+      <div class="side">
+      <div class="edu px">
+        <div class="label">education</div>
+        <div><b>UC Santa Cruz</b><span>MS, Computer Science &amp; Engineering<br>Sept 2026 – June 2028</span></div>
+        <div><b>Vellore Institute of Technology</b><span>B.Tech, Electronics &amp; Computer Engineering<br>GPA 3.88 / 4.0 · May 2026</span></div>
+      </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience" class="wrap">
+    <h2><span><span class="slash">/</span>experience</span><canvas class="sprite" data-sprite="bag" data-scale="4" aria-hidden="true"></canvas></h2>
+    <div class="tabs" data-tabs>
+      <div class="tablist" role="tablist" aria-label="Companies">
+        <button role="tab" id="t-baud" aria-controls="p-baud" aria-selected="true">Baud Resources</button>
+        <button role="tab" id="t-medx" aria-controls="p-medx" aria-selected="false" tabindex="-1">MEDxAI</button>
+        <button role="tab" id="t-jpr" aria-controls="p-jpr" aria-selected="false" tabindex="-1">JP Research</button>
+      </div>
+      <div>
+        <article class="panel" role="tabpanel" id="p-baud" aria-labelledby="t-baud">
+          <h3>AI &amp; Optimization Intern @ <em>Baud Resources</em></h3>
+          <p class="date">Aug 2025 – Sept 2025 <span class="where">· remote</span></p>
+          <ul class="bul">
+            <li>Built an automated multi-source web data ingestion pipeline with dynamic Python scraping modules, improving collection accuracy across 10+ sources.</li>
+            <li>Worked with product managers on custom status metrics and automated trigger pipelines in ClickUp, making cross-team project tracking 35% more efficient.</li>
+            <li>Automated financial record sync with Google Apps Script, removing all manual data entry across Forms, Sheets and Drive.</li>
+          </ul>
+        </article>
+        <article class="panel" role="tabpanel" id="p-medx" aria-labelledby="t-medx" hidden>
+          <h3>Software Engineering Intern @ <em>MEDxAI Innovations</em></h3>
+          <p class="date">Apr 2024 – Jul 2024 <span class="where">· Chennai, India</span></p>
+          <ul class="bul">
+            <li>Architected and deployed a FastAPI model-serving microservice for deep learning audio inference, cutting client integration complexity by 30% on low-power edge hardware.</li>
+            <li>Tuned preprocessing with SMOTE sampling to reach 96% diagnostic precision across 6 condition categories.</li>
+            <li>Added async endpoint handlers for .wav payloads, bringing API latency under 15 ms for real-time edge processing.</li>
+          </ul>
+        </article>
+        <article class="panel" role="tabpanel" id="p-jpr" aria-labelledby="t-jpr" hidden>
+          <h3>Data Science Intern @ <em>JP Research</em></h3>
+          <p class="date">May 2024 – Jul 2024 <span class="where">· Pune, India</span></p>
+          <ul class="bul">
+            <li>Automated document extraction with Python (regex, PyTesseract) over 1,000+ unstructured PDFs: under 200 ms per file and 90% less manual entry.</li>
+            <li>Designed feature extraction workflows using Otsu thresholding and HOG for national datasets.</li>
+            <li>Wrote data quality monitoring scripts that found and fixed systemic anomalies across 10+ relational datasets.</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" class="wrap">
+    <h2><span><span class="slash">/</span>projects</span><canvas class="sprite" data-sprite="code" data-scale="4" aria-hidden="true"></canvas></h2>
+    <div class="cards">
+      <article class="card px">
+        <h3>Distributed Security Surveillance Backend</h3>
+        <p>Microservices backend for real-time video ingestion and YOLO inference queues. Frame-to-notification in under 1.8 s, 40% fewer false alerts from multi-stage scene evaluation, 91% target recognition.</p>
+        <div class="stack"><span>python</span><span>fastapi</span><span>yolo</span><span>microservices</span></div>
+      </article>
+      <article class="card px">
+        <h3>Multiagent Parallel Environment Framework</h3>
+        <p>Multi-threaded framework that syncs state across asynchronous game environments to speed up RL training, with rendering queues decoupled from the learning loop.</p>
+        <div class="stack"><span>python</span><span>multiprocessing</span><span>q-learning</span><span>async i/o</span></div>
+      </article>
+    </div>
+    <div class="more">
+      <h3>more projects</h3>
+    </div>
+    <div class="minis" id="minis">
+      <a class="mini px" data-cat="backend" href="https://github.com/KadamVrushali/FastAPI-Book-Manager" target="_blank" rel="noopener">
+        <b>FastAPI Book Manager</b><span>CRUD API for a book collection with live WebSocket updates, pagination, sorting and filtering.</span><small>python · fastapi · websockets<em>repo ↗</em></small>
+      </a>
+      <a class="mini px" data-cat="ml finance" href="https://github.com/KadamVrushali/-DeFi-Wallet-Credit-Scoring-with-Machine-Learning-" target="_blank" rel="noopener">
+        <b>DeFi Wallet Credit Scoring</b><span>Credit scores for DeFi wallets from Aave V2 transaction data, with wallet-level feature engineering.</span><small>python · ml<em>repo ↗</em></small>
+      </a>
+      <a class="mini px" data-cat="ml finance" href="https://github.com/KadamVrushali/Zeru---Problem_Statement_2" target="_blank" rel="noopener">
+        <b>Wallet Risk Scoring</b><span>Risk scoring for crypto wallets, built from scratch.</span><small>python<em>repo ↗</em></small>
+      </a>
+      <a class="mini px" data-cat="ml" href="https://github.com/KadamVrushali/Brain-Tumor-Classification" target="_blank" rel="noopener">
+        <b>Brain Tumor Classification</b><span>Classifies brain tumor scans with CNNs and HOG features.</span><small>python · cnn · hog<em>repo ↗</em></small>
+      </a>
+      <a class="mini px" data-cat="ml" href="https://github.com/KadamVrushali/Celebrity-Face-Detection" target="_blank" rel="noopener">
+        <b>Celebrity Face Detection</b><span>End-to-end pipeline from web scraping to a CNN that recognizes celebrity faces.</span><small>python · cnn · scraping<em>repo ↗</em></small>
+      </a>
+      <a class="mini px" data-cat="ml" href="https://github.com/KadamVrushali/Malyalam-Sentiment-Analysis" target="_blank" rel="noopener">
+        <b>Malayalam Sentiment Analysis</b><span>Two approaches to sentiment analysis for Malayalam text.</span><small>nlp<em>repo ↗</em></small>
+      </a>
+    </div>
+    <p style="margin-top:28px">Everything else is on <a href="https://github.com/KadamVrushali" target="_blank" rel="noopener">GitHub</a>.</p>
+  </section>
+
+  <section id="publications" class="wrap">
+    <h2><span><span class="slash">/</span>publications &amp; mentorship</span><canvas class="sprite" data-sprite="scroll" data-scale="4" aria-hidden="true"></canvas></h2>
+    <article class="pub px">
+      <span class="date">IEEE CICT · Dec 2023</span>
+      <div>
+        <h3>Drone-Based Agricultural Inspection System</h3>
+        <p>Co-author and inventor. Low-cost compute algorithms for real-time edge processing on aerial hardware. Indian patent application no. 202341083886. <a href="https://scholar.google.com/citations?user=QISNOOMAAAAJ" target="_blank" rel="noopener">Google Scholar ↗</a></p>
+      </div>
+    </article>
+    <article class="pub px">
+      <span class="date">VIT Chennai · Jul 2025</span>
+      <div>
+        <h3>Speaker, “Internship Insider”</h3>
+        <p>Technical speaker and mentor, guiding student teams on full-stack software pipeline integration.</p>
+      </div>
+    </article>
+  </section>
+
+  <section id="links" class="wrap">
+    <h2><span><span class="slash">/</span>find me</span><canvas class="sprite" data-sprite="heart" data-scale="4" aria-hidden="true"></canvas></h2>
+    <div class="links">
+      <a class="link px" href="https://www.linkedin.com/in/vrushalikadam14/" target="_blank" rel="noopener me"><canvas class="sprite" data-sprite="bag" data-scale="3" aria-hidden="true"></canvas><div><b>LinkedIn</b><span>in/vrushalikadam14</span></div></a>
+      <a class="link px" href="https://github.com/KadamVrushali" target="_blank" rel="noopener me"><canvas class="sprite" data-sprite="code" data-scale="3" aria-hidden="true"></canvas><div><b>GitHub</b><span>KadamVrushali</span></div></a>
+      <!-- TODO add Instagram handle
+      <a class="link px" href="https://www.instagram.com/YOUR_HANDLE/" target="_blank" rel="noopener me"><canvas class="sprite" data-sprite="camera" data-scale="3" aria-hidden="true"></canvas><div><b>Instagram</b><span>@YOUR_HANDLE</span></div></a>
+      -->
+      <a class="link px" href="https://scholar.google.com/citations?user=QISNOOMAAAAJ" target="_blank" rel="noopener me"><canvas class="sprite" data-sprite="cap" data-scale="3" aria-hidden="true"></canvas><div><b>Scholar</b><span>publications</span></div></a>
+      <a class="link px" href="resume.pdf" target="_blank" rel="noopener"><canvas class="sprite" data-sprite="scroll" data-scale="3" aria-hidden="true"></canvas><div><b>Résumé</b><span>PDF</span></div></a>
+    </div>
+    <div class="mail">
+      <canvas class="sprite" data-sprite="mail" data-scale="4" aria-hidden="true"></canvas>
+      <code id="email">vkadam@ucsc.edu</code>
+      <button class="btn px" id="copy" type="button">Copy email</button>
+    </div>
+  </section>
+</main>
+
+<footer class="wrap">made with pixels &amp; <canvas class="sprite" data-sprite="heart" data-scale="2" aria-hidden="true"></canvas> by Vrushali Kadam · 2026</footer>
+
+<script>
+class PixelArt {
+  static palette = {k:'#3d3a4b',w:'#ffffff',b:'#5fb8f5',n:'#1e1b26',t:'#ff8fb1',P:'#ff5fa2',h:'#ffe6f1',r:'#c23574',s:'#ffd3e6',y:'#ffc94d'};
+  static sprites = {
+    husky: [[
+      '...............k...k.',
+      '..............kkk.kkk',
+      '..............kwbkkwk',
+      '..k...........kwwwwwn',
+      '.kk.kkkkkkkkkkkwwwww.',
+      '.k.kkkkkkkkkkkkkwwtt.',
+      '..kkkkkkkkkkkkkww....',
+      '...wwwwwwwwwwwwww....',
+      '...wwwwwwwwwwwwww....',
+      '...kw..kw...kw..kw...',
+      '...w...w.....w...w...'],[
+      '...............k...k.',
+      '..............kkk.kkk',
+      '..............kwbkkwk',
+      '..k...........kwwwwwn',
+      '.kk.kkkkkkkkkkkwwwww.',
+      '.k.kkkkkkkkkkkkkwwtt.',
+      '..kkkkkkkkkkkkkww....',
+      '...wwwwwwwwwwwwww....',
+      '...wwwwwwwwwwwwww....',
+      '..kw....kw.kw....kw..',
+      '..w......w.w......w..']],
+    heart: [['.PP.PP.','PhPPPPP','PPPPPPP','.PPPPP.','..PPP..','...P...']],
+    sparkle: [['...P...','...P...','..PhP..','PPhhhPP','..PhP..','...P...','...P...']],
+    bag: [['...rrr...','...r.r...','rrrrrrrrr','rsssssssr','rsssPsssr','rrrrPrrrr','rsssssssr','rsssssssr','rrrrrrrrr']],
+    code: [['...r....P.r...','..r....P...r..','.r.....P....r.','r.....P......r','.r....P.....r.','..r..P.....r..','...r.P....r...']],
+    scroll: [['rrrrrrrr.','rwwwwwwrr','rwPPPPwwr','rwwwwwwwr','rwrrrrrwr','rwwwwwwwr','rwrrrrrwr','rwwwwwwwr','rwrrrwwwr','rwwwwwwwr','rrrrrrrrr']],
+    mail: [['rrrrrrrrrrr','rrwwwwwwwrr','rwrwwwwwrwr','rwwrwwwrwwr','rwwwrPrwwwr','rwwwwwwwwwr','rwwwwwwwwwr','rrrrrrrrrrr']],
+    camera: [['...rrr.....','rrrrrrrrrrr','rwwwrrrwwPr','rwwrsssrwwr','rwwrsssrwwr','rwwwrrrwwwr','rwwwwwwwwwr','rrrrrrrrrrr']],
+    cap: [['.....r.....','...rrrrr...','.rrrrrrrrr.','rrrrrrrrrrr','..rrrrrrrP.','..rrrrrrr.P','..........P']]
+  };
+  static draw(canvas, rows, scale, tint) {
+    canvas.width = rows[0].length * scale; canvas.height = rows.length * scale;
+    const ctx = canvas.getContext('2d');
+    rows.forEach((row, y) => [...row].forEach((c, x) => {
+      if (this.palette[c]) { ctx.fillStyle = c === 'P' && tint || this.palette[c]; ctx.fillRect(x * scale, y * scale, scale, scale); }
+    }));
+  }
+  static mount() {
+    const still = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    document.querySelectorAll('canvas[data-sprite]').forEach(c => {
+      const frames = this.sprites[c.dataset.sprite], scale = +c.dataset.scale || 4;
+      let i = 0; this.draw(c, frames[0], scale, c.dataset.tint);
+      if ('run' in c.dataset && frames.length > 1 && !still)
+        setInterval(() => this.draw(c, frames[i = (i + 1) % frames.length], scale), 160);
+    });
+  }
+}
+
+class Tabs {
+  constructor(root) {
+    this.tabs = [...root.querySelectorAll('[role=tab]')];
+    this.tabs.forEach((t, i) => {
+      t.addEventListener('click', () => this.select(i));
+      t.addEventListener('keydown', e => {
+        const d = {ArrowDown:1, ArrowRight:1, ArrowUp:-1, ArrowLeft:-1}[e.key];
+        if (d) { e.preventDefault(); this.select((i + d + this.tabs.length) % this.tabs.length, true); }
+      });
+    });
+  }
+  select(n, focus) {
+    this.tabs.forEach((t, i) => {
+      const on = i === n;
+      t.setAttribute('aria-selected', on); t.tabIndex = on ? 0 : -1;
+      document.getElementById(t.getAttribute('aria-controls')).hidden = !on;
+    });
+    if (focus) this.tabs[n].focus();
+  }
+}
+
+class Site {
+  constructor() {
+    PixelArt.mount();
+    document.querySelectorAll('[data-tabs]').forEach(r => new Tabs(r));
+    this.copyEmail(); this.spyNav();
+  }
+  filters() {
+    const btns = [...document.querySelectorAll('[data-filter]')], cards = [...document.querySelectorAll('.mini')];
+    btns.forEach(b => b.addEventListener('click', () => {
+      btns.forEach(x => x.setAttribute('aria-pressed', x === b));
+      cards.forEach(c => c.hidden = b.dataset.filter !== 'all' && !c.dataset.cat.split(' ').includes(b.dataset.filter));
+    }));
+  }
+  copyEmail() {
+    const btn = document.getElementById('copy'), email = document.getElementById('email');
+    btn.addEventListener('click', async () => {
+      try { await navigator.clipboard.writeText(email.textContent); btn.textContent = 'Copied!'; }
+      catch { getSelection().selectAllChildren(email); btn.textContent = 'Selected, press Ctrl+C'; }
+      setTimeout(() => btn.textContent = 'Copy email', 2000);
+    });
+  }
+  spyNav() {
+    const links = new Map([...document.querySelectorAll('.nav ul a')].map(a => [a.hash.slice(1), a]));
+    const io = new IntersectionObserver(es => es.forEach(e => {
+      if (!e.isIntersecting) return;
+      links.forEach(a => a.removeAttribute('aria-current'));
+      links.get(e.target.id)?.setAttribute('aria-current', 'true');
+    }), {rootMargin: '-40% 0px -55% 0px'});
+    document.querySelectorAll('section[id]').forEach(s => io.observe(s));
+  }
+}
+new Site();
+</script>
+</body>
+</html>

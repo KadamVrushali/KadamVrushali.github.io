@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://kadamvrushali.github.io/sitemap.xml
